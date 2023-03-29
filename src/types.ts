@@ -141,6 +141,12 @@ export type Props = {
   reserveScrollBarGap?: boolean
 
   /**
+   * Ability to skip focus hijacking. This is used if you are popping a modal from a BottomSheet, and need to handle clicks that are outside of the BottomSheet. 
+   * this param is passed on to useFocusTrap() hook.
+   */
+  clickOutsideDeactivates?: boolean
+
+  /**
    * Open immediatly instead of initially animating from a closed => open state, useful if the bottom sheet is visible by default and the animation would be distracting
    */
   skipInitialTransition?: boolean,

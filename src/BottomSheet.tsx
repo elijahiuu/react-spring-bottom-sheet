@@ -69,6 +69,7 @@ export const BottomSheet = React.forwardRef<
     onSpringEnd,
     reserveScrollBarGap = blocking,
     expandOnContentDrag = false,
+    clickOutsideDeactivates,
     ...props
   },
   forwardRef
@@ -122,6 +123,7 @@ export const BottomSheet = React.forwardRef<
     fallbackRef: overlayRef,
     initialFocusRef: initialFocusRef || undefined,
     enabled: ready && blocking && initialFocusRef !== false,
+    clickOutsideDeactivates,
   })
 
   const { minSnap, maxSnap, maxHeight, findSnap } = useSnapPoints({

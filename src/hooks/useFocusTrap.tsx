@@ -1,16 +1,19 @@
 import { createFocusTrap } from 'focus-trap'
 import { useDebugValue, useEffect, useRef } from 'react'
 
+
 export function useFocusTrap({
   targetRef,
   fallbackRef,
   initialFocusRef,
   enabled,
+  clickOutsideDeactivates
 }: {
   targetRef: React.RefObject<HTMLElement>
   fallbackRef: React.RefObject<HTMLElement>
   initialFocusRef?: React.RefObject<HTMLElement>
-  enabled: boolean
+  enabled: boolean,
+  clickOutsideDeactivates: boolean | undefined,
 }) {
   const ref = useRef<{ activate: () => void; deactivate: () => void }>({
     activate: () => {
@@ -42,7 +45,7 @@ export function useFocusTrap({
         : undefined,
       fallbackFocus: fallback,
       escapeDeactivates: false,
-      clickOutsideDeactivates: false,
+      clickOutsideDeactivates: clickOutsideDeactivates === false ? clickOutsideDeactivates : true,
     })
     let active = false
 

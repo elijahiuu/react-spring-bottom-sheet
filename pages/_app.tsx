@@ -21,6 +21,7 @@ if (debugging) {
 
 export async function getStaticProps() {
   const [
+    // @ts-ignore
     { version, description, homepage, name, meta = {} },
     { version: reactSpringVersion },
     { version: reactUseGestureVersion },

@@ -1,5 +1,5 @@
 {
-  "name": "react-spring-bottom-sheet",
+  "name": "@elijahiuu/react-spring-bottom-sheet",
   "description": "✨ Accessible, 🪄 Delightful, and 🤯 Performant. Built on react-spring for the web, and react-use-gesture.",
   "license": "MIT",
   "author": "Cody Olsen",
@@ -22,10 +22,10 @@
     "build:dist": "npm run build:postcss && npm run build:microbundle && npm run build:declarations",
     "build:microbundle": "NODE_ENV=production microbundle --define process.env.NODE_ENV=production --tsconfig tsconfig.microbundle.json -f cjs,es,modern --css-modules false --jsx React.createElement --jsxFragment React.Fragment",
     "build:postcss": "postcss -d dist src/style.css",
-    "dev": "next",
+    "dev": "next -p 3010",
     "lint": "eslint . --ext ts,tsx,js,jsx --max-warnings 0 && tsc",
     "prepublishOnly": "npm run build:dist",
-    "start": "next start",
+    "start": "next start -p 3010",
     "test": "npm run prepublishOnly && npm run build"
   },
   "sideEffects": [
